@@ -317,15 +317,16 @@ Once approved, your widget will be available to all Azure DevOps users via the M
 
 ## Contributing
 
-1. Fork the Repository
+### 1. Fork the Repository
 Create a fork of the repository and clone it locally.
 
-2. Create a New Branch
+### 2. Create a New Branch
 Develop new features or fix bugs in a new branch:
 
+```bash
 git checkout -b feature/new-feature
-
-3. Submit a Pull Request
+```
+### 3. Submit a Pull Request
 
 After testing your changes, push your branch and submit a pull request to the main repository.
 
