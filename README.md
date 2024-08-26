@@ -314,23 +314,3 @@ Go to your extension's page in the Azure DevOps Marketplace.
 Under the Visibility section, select Public.
 Submit your extension for approval by Microsoft. The approval process may take a few days.
 Once approved, your widget will be available to all Azure DevOps users via the Marketplace.
-
-## Contributing
-
-### 1. Fork the Repository
-Create a fork of the repository and clone it locally.
-
-### 2. Create a New Branch
-Develop new features or fix bugs in a new branch:
-
-```bash
-git checkout -b feature/new-feature
-```
-### 3. Submit a Pull Request
-
-After testing your changes, push your branch and submit a pull request to the main repository.
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-This guide provides the necessary steps for developers to effectively use, customize, and publicly distribute the Harvest Billing Widget within their Azure DevOps environment. By following these best practices, developers can ensure a smooth integration process and share their work with the broader Azure DevOps community.
