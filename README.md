@@ -92,22 +92,25 @@ The vss-extension.json file is the core configuration file for your Azure DevOps
 Replace the "publisher": "EirEvo-EvoLabs" with your own publisher ID.
 Example:
 
+```bash
 "publisher": "YourPublisherID",
-
+```
 **2. Version:**
 
 Set the version to reflect your extension's versioning strategy.
 Example:
 
+```bash
 "version": "1.0.1",
-
+```
 **3. Categories:**
 
 Ensure the "categories" field includes "Azure Boards" to make your widget compatible with Azure DevOps dashboards.
 Example:
 
+```bash
 "categories": ["Azure Boards"],
-
+```
 **4. Gallery Flags:**
 
 To make the widget public, add the following "galleryFlags" field:
