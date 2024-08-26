@@ -68,17 +68,19 @@ Start by cloning the repository to your local machine:
 ```bash
 git clone https://github.com/EirEvo/AzureDevOpsExtensions.git
 cd AzureDevOpsExtensions
-
+```
 ### 2. Install Dependencies
 Install the necessary Node.js dependencies:
 
+```bash
 npm install
-
+```
 ### 3. Launch the Local Development Server
 Use tools like http-server to serve the HTML files locally for testing:
 
 ```bash
 npx http-server
+```
 Visit http://localhost:8080 to view the widget in your browser.
 
 ## Modifying the vss-extension.json File
