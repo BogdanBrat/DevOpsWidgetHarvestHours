@@ -87,7 +87,7 @@ Visit http://localhost:8080 to view the widget in your browser.
 The vss-extension.json file is the core configuration file for your Azure DevOps extension. It defines the widget's metadata, including its ID, version, categories, and the resources it uses.
 
 ### Key Modifications Required:
-1. Publisher ID:
+** 1. Publisher ID:
 
 Replace the "publisher": "EirEvo-EvoLabs" with your own publisher ID.
 Example:
