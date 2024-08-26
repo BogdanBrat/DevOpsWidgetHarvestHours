@@ -283,7 +283,7 @@ This command will generate a .vsix file in your project directory, ready for dis
 ### 1. Create a Publisher
 To publish your extension, you first need to create a publisher on the Azure DevOps Marketplace:
 
-1. Navigate to the Azure DevOps Publisher Management page.
+1. Navigate to the [Azure DevOps Publisher Management page](https://marketplace.visualstudio.com/manage/publishers).
 2. Click on New Publisher.
 3. Fill in the details like Publisher Name and Display Name.
 4. Complete the creation process by following the on-screen instructions.
