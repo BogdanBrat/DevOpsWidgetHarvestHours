@@ -60,7 +60,6 @@ harvest-billing-widget/
 ├── README.md                     # Project readme
 └── vss-extension.json            # Azure DevOps extension manifest
 
-
 ## Setting Up Your Development Environment
 
 ### 1. Clone the Repository
