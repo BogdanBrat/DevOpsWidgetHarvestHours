@@ -94,61 +94,66 @@ Example:
 
 "publisher": "YourPublisherID",
 
-2. Version:
+**2. Version:**
 
 Set the version to reflect your extension's versioning strategy.
 Example:
 
 "version": "1.0.1",
 
-3. Categories:
+**3. Categories:**
 
 Ensure the "categories" field includes "Azure Boards" to make your widget compatible with Azure DevOps dashboards.
 Example:
 
 "categories": ["Azure Boards"],
 
-4. Gallery Flags:
+**4. Gallery Flags:**
 
 To make the widget public, add the following "galleryFlags" field:
 
+```bash
 "galleryFlags": [
   "Preview",
   "Public"
 ],
-
-5. Resource Paths:
+```
+**5. Resource Paths:**
 
 Ensure all paths to resources (e.g., images, scripts) are correctly defined. This includes the logo, preview image, and the SDK script.
 Example for icons:
 
+```bash
 "icons": {
   "default": "img/logo.png"
 }
-
-6. Widget Sizes:
+```
+**6. Widget Sizes:**
 
 Define the supported sizes for the widget in the "supportedSizes" field to ensure proper display on the dashboard.
 Example:
 
+```bash
 "supportedSizes": [
   { "rowSpan": 2, "columnSpan": 2 },
   { "rowSpan": 2, "columnSpan": 3 },
   { "rowSpan": 3, "columnSpan": 2 },
   { "rowSpan": 3, "columnSpan": 3 }
 ],
-
-7. SDK Reference:
+```
+**7. SDK Reference:**
 
 Ensure the Azure DevOps SDK script is correctly referenced in the vss-extension.json file:
 
+```bash
 {
   "path": "sdk/scripts/VSS.SDK.min.js",
   "addressable": true
 }
+```
+### Final Example of vss-extension.json:
 
-Final Example of vss-extension.json:
-
+```bash
 {
   "manifestVersion": 1,
   "id": "HarvestWidgets",
@@ -253,6 +258,7 @@ Final Example of vss-extension.json:
     "vso.test"
   ]
 }
+```
 
 ### Building and Packaging the Widget
 1. Build the Project
