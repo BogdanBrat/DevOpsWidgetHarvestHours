@@ -39,11 +39,11 @@ Ensure you have the following installed and configured before starting:
   ```bash
   npm install -g tfx-cli
 
-Project Structure
+## Project Structure
+
 The widget project is structured as follows:
 
-bash
-Copy code
+```bash
 harvest-billing-widget/
 │
 ├── docs/                         # Documentation and images
@@ -59,101 +59,262 @@ harvest-billing-widget/
 ├── package.json                  # Node.js project file with dependencies
 ├── README.md                     # Project readme
 └── vss-extension.json            # Azure DevOps extension manifest
-Setting Up Your Development Environment
-1. Clone the Repository
+
+## Setting Up Your Development Environment
+
+### 1. Clone the Repository
 Start by cloning the repository to your local machine:
 
-bash
-Copy code
+```bash
 git clone https://github.com/EirEvo/AzureDevOpsExtensions.git
 cd AzureDevOpsExtensions
-2. Install Dependencies
+
+### 2. Install Dependencies
 Install the necessary Node.js dependencies:
 
-bash
-Copy code
 npm install
-3. Launch the Local Development Server
+
+### 3. Launch the Local Development Server
 Use tools like http-server to serve the HTML files locally for testing:
 
-bash
-Copy code
+```bash
 npx http-server
 Visit http://localhost:8080 to view the widget in your browser.
 
-Modifying the vss-extension.json File
+## Modifying the vss-extension.json File
 The vss-extension.json file is the core configuration file for your Azure DevOps extension. It defines the widget's metadata, including its ID, version, categories, and the resources it uses.
 
-Key Modifications Required:
-Publisher ID:
+### Key Modifications Required:
+1. Publisher ID:
 
 Replace the "publisher": "EirEvo-EvoLabs" with your own publisher ID.
-
 Example:
 
-json
-Copy code
 "publisher": "YourPublisherID",
-Version:
+
+2. Version:
 
 Set the version to reflect your extension's versioning strategy.
-
 Example:
 
-json
-Copy code
 "version": "1.0.1",
-Categories:
+
+3. Categories:
 
 Ensure the "categories" field includes "Azure Boards" to make your widget compatible with Azure DevOps dashboards.
-
 Example:
 
-json
-Copy code
 "categories": ["Azure Boards"],
-Gallery Flags:
+
+4. Gallery Flags:
 
 To make the widget public, add the following "galleryFlags" field:
 
-json
-Copy code
 "galleryFlags": [
   "Preview",
   "Public"
 ],
-Resource Paths:
+
+5. Resource Paths:
 
 Ensure all paths to resources (e.g., images, scripts) are correctly defined. This includes the logo, preview image, and the SDK script.
-
 Example for icons:
 
-json
-Copy code
 "icons": {
   "default": "img/logo.png"
 }
-Widget Sizes:
+
+6. Widget Sizes:
 
 Define the supported sizes for the widget in the "supportedSizes" field to ensure proper display on the dashboard.
-
 Example:
 
-json
-Copy code
 "supportedSizes": [
   { "rowSpan": 2, "columnSpan": 2 },
   { "rowSpan": 2, "columnSpan": 3 },
   { "rowSpan": 3, "columnSpan": 2 },
   { "rowSpan": 3, "columnSpan": 3 }
 ],
-SDK Reference:
+
+7. SDK Reference:
 
 Ensure the Azure DevOps SDK script is correctly referenced in the vss-extension.json file:
 
-json
-Copy code
 {
   "path": "sdk/scripts/VSS.SDK.min.js",
   "addressable": true
 }
+
+Final Example of vss-extension.json:
+
+{
+  "manifestVersion": 1,
+  "id": "HarvestWidgets",
+  "version": "1.0.1",
+  "name": "Harvest Billing Widget",
+  "description": "Displays hours from Harvest, providing detailed insights into time allocation for projects. The hours are categorized into billable hours, 'R&D' (Research & Development), and Internal hours.",
+  "publisher": "YourPublisherID",
+  "categories": ["Azure Boards"],
+  "galleryFlags": [
+    "Preview",
+    "Public"
+  ],
+  "tags": [
+    "hours",
+    "billable",
+    "non-billable",
+    "harvest",
+    "time tracking",
+    "dashboard",
+    "widget",
+    "Internal",
+    "extension"
+  ],
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/EirEvo/AzureDevOpsExtensions"
+  },
+  "content": {
+        "details": {
+            "path": "docs/overview.md"
+        }
+    },
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "icons": {
+    "default": "img/logo.png"
+  },
+  "demands": ["contribution/ms.vss-dashboards-web.widget-sdk-version-2"],
+  "contributions": [
+    {
+      "id": "HarvestHoursWidget",
+      "type": "ms.vss-dashboards-web.widget",
+      "targets": [
+        "ms.vss-dashboards-web.widget-catalog",
+        ".HarvestHoursWidget.Configuration"
+      ],
+      "properties": {
+        "name": "Harvest Hours Widget",
+        "isNameConfigurable": true,
+        "description": "A widget to display billable and non-billable hours from Harvest",
+        "catalogIconUrl": "img/preview.png",
+        "uri": "widget.html",
+        "supportedSizes": [
+          { "rowSpan": 2, "columnSpan": 2 },
+          { "rowSpan": 2, "columnSpan": 3 },
+          { "rowSpan": 3, "columnSpan": 2 },
+          { "rowSpan": 3, "columnSpan": 3 }
+        ],
+        "supportedScopes": ["project_team"]
+      }
+    },
+    {
+      "id": "HarvestHoursWidget.Configuration",
+      "type": "ms.vss-dashboards-web.widget-configuration",
+      "targets": ["ms.vss-dashboards-web.widget-configuration"],
+      "properties": {
+        "name": "Harvest Hours Widget Configuration",
+        "description": "Configures the Harvest Hours widget",
+        "uri": "widget-configuration.html"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "widget.html",
+      "addressable": true
+    },
+    {
+      "path": "widget-configuration.html",
+      "addressable": true
+    },
+    {
+      "path": "sdk/scripts/VSS.SDK.min.js",
+      "addressable": true
+    },
+    {
+      "path": "img",
+      "addressable": true
+    },
+    {
+      "path": "scripts",
+      "addressable": true
+    }
+  ],
+  "scopes": [
+    "vso.build",
+    "vso.code",
+    "vso.identity",
+    "vso.test"
+  ]
+}
+
+### Building and Packaging the Widget
+1. Build the Project
+Before packaging your widget for distribution, make sure it’s ready for production:
+
+npm run build
+
+2. Create the Extension Package
+To package the widget into a .vsix file, which can be uploaded to the Azure DevOps Marketplace, use the following command:
+tfx extension create --manifest-globs vss-extension.json
+This command will generate a .vsix file in your project directory, ready for distribution.
+
+## Deploying to Azure DevOps
+
+### 1. Create a Publisher
+To publish your extension, you first need to create a publisher on the Azure DevOps Marketplace:
+
+1. Navigate to the Azure DevOps Publisher Management page.
+2. Click on New Publisher.
+3. Fill in the details like Publisher Name and Display Name.
+4. Complete the creation process by following the on-screen instructions.
+
+### 2. Upload the Extension to the Marketplace
+Once your publisher is set up, you can upload your .vsix package:
+
+1. Go to the Azure DevOps Marketplace Publishing page.
+2. Select your publisher.
+3. Click New Extension and select the Azure DevOps extension type.
+4. Upload the .vsix file created earlier.
+5. Fill out the extension details, such as name, version, and description.
+6. Click Publish to make the extension available.
+
+### 3. Add the Widget to a Dashboard
+After publishing the widget, you can add it to any Azure DevOps dashboard:
+
+1. Open your Azure DevOps project.
+2. Navigate to your dashboard.
+3. Click on "Add Widget" and search for "Harvest Billing Widget".
+4. Drag and drop the widget onto your dashboard.
+5. Configure the widget by providing the necessary settings (see Configuration).
+
+## Making the Widget Public
+To make your widget available to everyone on the Azure DevOps Marketplace:
+
+Go to your extension's page in the Azure DevOps Marketplace.
+Under the Visibility section, select Public.
+Submit your extension for approval by Microsoft. The approval process may take a few days.
+Once approved, your widget will be available to all Azure DevOps users via the Marketplace.
+
+## Contributing
+
+1. Fork the Repository
+Create a fork of the repository and clone it locally.
+
+2. Create a New Branch
+Develop new features or fix bugs in a new branch:
+
+git checkout -b feature/new-feature
+
+3. Submit a Pull Request
+
+After testing your changes, push your branch and submit a pull request to the main repository.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+This guide provides the necessary steps for developers to effectively use, customize, and publicly distribute the Harvest Billing Widget within their Azure DevOps environment. By following these best practices, developers can ensure a smooth integration process and share their work with the broader Azure DevOps community.
