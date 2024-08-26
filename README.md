@@ -50,6 +50,7 @@ The widget project is structured as follows:
 ### 1. Clone the Repository
 Start by cloning the repository to your local machine:
 
+```bash
 git clone https://github.com/EirEvo/AzureDevOpsExtensions.git
 cd AzureDevOpsExtensions
 
