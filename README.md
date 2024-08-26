@@ -43,7 +43,23 @@ Ensure you have the following installed and configured before starting:
 
 The widget project is structured as follows:
 
-![Project Structure](docs/Project%20Structure.png)
+```bash
+harvest-billing-widget/
+│
+├── docs/                         # Documentation and images
+├── img/                          # Widget images (e.g., logo, preview)
+├── scripts/                      # Custom JavaScript files for the widget
+│   └── widget-configuration.js   # Handles widget configuration logic
+├── sdk/                          # Azure DevOps SDK scripts
+│   └── scripts/
+│       ├── VSS.SDK.js            # Azure DevOps SDK
+│       └── VSS.SDK.min.js        # Minified Azure DevOps SDK
+├── widget.html                   # Main widget HTML file
+├── widget-configuration.html     # Configuration HTML file
+├── package.json                  # Node.js project file with dependencies
+├── README.md                     # Project readme
+└── vss-extension.json            # Azure DevOps extension manifest
+
 
 ## Setting Up Your Development Environment
 
@@ -62,6 +78,7 @@ npm install
 ### 3. Launch the Local Development Server
 Use tools like http-server to serve the HTML files locally for testing:
 
+```bash
 npx http-server
 Visit http://localhost:8080 to view the widget in your browser.
 
