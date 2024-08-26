@@ -263,15 +263,19 @@ Ensure the Azure DevOps SDK script is correctly referenced in the vss-extension.
 }
 ```
 
-### Building and Packaging the Widget
-1. Build the Project
+## Building and Packaging the Widget
+### 1. Build the Project
 Before packaging your widget for distribution, make sure it’s ready for production:
 
+```bash
 npm run build
-
-2. Create the Extension Package
+```
+### 2. Create the Extension Package
 To package the widget into a .vsix file, which can be uploaded to the Azure DevOps Marketplace, use the following command:
+
+```bash
 tfx extension create --manifest-globs vss-extension.json
+```
 This command will generate a .vsix file in your project directory, ready for distribution.
 
 ## Deploying to Azure DevOps
