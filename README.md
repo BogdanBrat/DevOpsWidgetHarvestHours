@@ -43,6 +43,7 @@ The widget project is structured as follows:
 harvest-billing-widget/
 │
 ├── docs/                         # Documentation and images
+│   └── overview.md               # Overview documentation
 ├── img/                          # Widget images (e.g., logo, preview)
 ├── scripts/                      # Custom JavaScript files for the widget
 │   └── widget-configuration.js   # Handles widget configuration logic
