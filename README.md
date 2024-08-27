@@ -1,7 +1,3 @@
-### Harvest Billing Widget Developer Guide
-
----
-
 # Harvest Billing Widget Developer Guide
 
 This guide provides developers with detailed instructions on how to integrate, customize, and publicly deploy the **Harvest Billing Widget** for Azure DevOps dashboards. The widget utilizes the Azure DevOps SDK and Harvest API to visually represent billable, non-billable, and R&D hours in a customizable chart. All source code and project details can be found in the [EirEvo/AzureDevOpsExtensions GitHub repository](https://github.com/EirEvo/AzureDevOpsExtensions).
