@@ -313,4 +313,12 @@ To make your widget available to everyone on the Azure DevOps Marketplace:
 
 Once approved, your widget will be available to all Azure DevOps users via the Marketplace.
 
-Important: If you intend to keep the extension private, do not add the "galleryFlags" field mentioned above. Instead, you can share the extension with your organization directly within the Marketplace by selecting the Share/Unshare option and choosing your organization.
+**Important:** If you intend to keep the extension private, do **not** add the snippet code:
+
+```bash
+"galleryFlags": [
+    "Preview",
+    "Public"
+  ]
+```
+Instead, you can share the extension with your organization directly within the Marketplace by selecting the **Share/Unshare** option and choosing your organization.
