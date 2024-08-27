@@ -308,11 +308,8 @@ After publishing the widget, you can add it to any Azure DevOps dashboard:
 To make your widget available to everyone on the Azure DevOps Marketplace:
 
 1. Go to your extension's page in the Azure DevOps Marketplace.
-2. Under the Visibility section, select Public.
-3. Submit your extension for approval by Microsoft. The approval process may take a few days.
-4. Once approved, your widget will be available to all Azure DevOps users via the Marketplace.
-
-Once approved, your widget will be available to all Azure DevOps users via the Marketplace.
+2. Click on Publish.
+3. Once approved, your widget will be automatically made public and available to all Azure DevOps users via the Marketplace.
 
 **Important:** If you intend to keep the extension private, do **not** add the snippet code:
 
